@@ -18,13 +18,11 @@ var day4= moment(today).add(4,'d').format('MMM Do YY');
 var day5= moment(today).add(5,'d').format('MMM Do YY');
 
 srchBtnEl.addEventListener('click',function(event){
-    
-    console.log("test");
+
     event.preventDefault();
     
     console.log(inputEl.value);
     cityNames.push(inputEl.value);
-    //put check loop for valid server response
     localStorage.setItem('lsCitynames',JSON.stringify(cityNames));
     
     if(cityNames!=null){
@@ -35,10 +33,7 @@ srchBtnEl.addEventListener('click',function(event){
         document.body.appendChild(but);
         }
     }
-    //function to append buttons 
-    // inputEl.value="San Diego";
-   // console.log(inputEl.value);
-    //calls fetch function
+    
     getApi();
    
 
@@ -74,7 +69,7 @@ function getApi(){
         
         searchdis.append(image);
         
-        var forecastURL="https:api.openweathermap.org/data/2.5/forecast?lat="+latit+"&lon="+longit+"&appid=6cda419b1462d4e231cfcd1dac976851";
+        var forecastURL="https://api.openweathermap.org/data/2.5/forecast?lat="+latit+"&lon="+longit+"&appid=6cda419b1462d4e231cfcd1dac976851";
         fetch(forecastURL)
         .then(function(response){
             return response.json();
@@ -100,23 +95,7 @@ function getApi(){
     
     
 }
-    //uses found values in the preveious json obj of longitute latitude to make another fetch response using th eapi call
-   // function forecast(data){
-   //     var forecastURL="https:api.openweathermap.org/data/2.5/forecast?lat="+data.coord.lat+"&lon="+data.coord.lon+"&appid=6cda419b1462d4e231cfcd1dac976851";
- //       fetch(forecastURL)
-   //     .then(function(response){
-  //        return response.json();
-   //     })
-  //      .then(function(data){
- //          console.log(data);
-  //          //display 5 day forecast dynamically
-  //          forDis.append("hello");
-    
-  //      })
-
-  //  }
-    
-    
+  
     
 
 

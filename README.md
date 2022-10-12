@@ -5,7 +5,7 @@
 Allen Klein
 
 - [Link to Site]( https://allen-ek.github.io/WeatherDash/)
-- [Link to Github Repository](https://github.com/allen-ek/day-planner)
+- [Link to Github Repository](https://github.com/allen-ek/WeatherDash)
 
 ## Why?
 I wanted to create a Forecast webpage that would use api calls to retrive information and be able to use that data to generate elements onto the webpage. 
