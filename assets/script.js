@@ -47,7 +47,7 @@ function getApi(){
             return response.json();
         })
          .then(function(data){
-        console.log(data);
+        
         
         console.log(data.coord.lat);
         console.log(data.coord.lon);
@@ -75,7 +75,6 @@ function getApi(){
             return response.json();
         })
         .then(function(data){
-            console.log(data);
             for(i=0;i<=40;i+=8){
                 var ftemp=parseInt(data.list[i].main.temp);
                 ftemp= Math.round((ftemp-273.15)*9/5+32);
