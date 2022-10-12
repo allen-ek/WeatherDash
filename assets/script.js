@@ -17,13 +17,6 @@ var day3= moment(today).add(3,'d').format('MMM Do YY');
 var day4= moment(today).add(4,'d').format('MMM Do YY');
 var day5= moment(today).add(5,'d').format('MMM Do YY');
 
-//if(localStorage.getItem('lsCitynames')==!null){
- //   for(i=0;i<5;i++){
-  //      srchBtnEl.append(lsCitynames[i]);
- //   }
-//}
-
-
 srchBtnEl.addEventListener('click',function(event){
     
     console.log("test");
@@ -47,7 +40,7 @@ srchBtnEl.addEventListener('click',function(event){
    // console.log(inputEl.value);
     //calls fetch function
     getApi();
-    forecast(getApi);
+   
 
 });
 
@@ -55,6 +48,7 @@ function getApi(){
     var requestURL="https://api.openweathermap.org/data/2.5/weather?q="+inputEl.value+"&appid=6cda419b1462d4e231cfcd1dac976851";
     fetch(requestURL)
         .then(function(response){
+            
             return response.json();
         })
          .then(function(data){
@@ -64,6 +58,7 @@ function getApi(){
         console.log(data.coord.lon);
         longit=data.coord.lon;
         latit=data.coord.lat;
+        
         //convert temp
         var ftemp=parseInt(data.main.temp);
         ftemp= Math.round((ftemp-273.15)*9/5+32);
@@ -78,9 +73,21 @@ function getApi(){
         image.setAttribute('src',"http://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
         
         searchdis.append(image);
+        
+        var forecastURL="https:api.openweathermap.org/data/2.5/forecast?lat="+latit+"&lon="+longit+"&appid=6cda419b1462d4e231cfcd1dac976851";
+        fetch(forecastURL)
+        .then(function(response){
+            return response.json();
+        })
+        .then(function(data){
+            console.log(data);
 
+            
+        })
 
     })
+    
+    
 }
     //uses found values in the preveious json obj of longitute latitude to make another fetch response using th eapi call
    // function forecast(data){
