@@ -4,7 +4,7 @@
 
 Allen Klein
 
-- [Link to Site]( https://allen-ek.github.io/day-planner/)
+- [Link to Site]( https://allen-ek.github.io/WeatherDash/)
 - [Link to Github Repository](https://github.com/allen-ek/day-planner)
 
 ## Why?
