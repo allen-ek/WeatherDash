@@ -81,8 +81,19 @@ function getApi(){
         })
         .then(function(data){
             console.log(data);
-
+            for(i=0;i<=40;i+=8){
+                var ftemp=parseInt(data.list[i].main.temp);
+                ftemp= Math.round((ftemp-273.15)*9/5+32);
+                forDis.append(data.list[i].dt_txt);
+                forDis.append('temp'+ftemp+'Farenheit');
+                forDis.append(' Wind Speed:'+data.list[i].wind.speed+'mph'+'\n');
+                forDis.append('Humidity:'+data.list[i].main.humidity+'%'+'\n');
+                var images=document.createElement('img');
+                images.setAttribute('src',"http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png")
             
+                searchdis.append(images);
+
+        }
         })
 
     })
