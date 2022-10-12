@@ -70,7 +70,7 @@ function getApi(){
         searchdis.append(' Wind Speed:'+data.wind.speed+'mph'+'\n');
         searchdis.append('humidity'+data.main.humidity+'%'+'\n');
         var image=document.createElement('img');
-        image.setAttribute('src',"http://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
+        image.setAttribute('src',"https://openweathermap.org/img/w/" + data.weather[0].icon + ".png")
         
         searchdis.append(image);
         
@@ -89,7 +89,7 @@ function getApi(){
                 forDis.append(' Wind Speed:'+data.list[i].wind.speed+'mph'+'\n');
                 forDis.append('Humidity:'+data.list[i].main.humidity+'%'+'\n');
                 var images=document.createElement('img');
-                images.setAttribute('src',"http://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png")
+                images.setAttribute('src',"https://openweathermap.org/img/w/" + data.list[i].weather[0].icon + ".png")
             
                 searchdis.append(images);
 
